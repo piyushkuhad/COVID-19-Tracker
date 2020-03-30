@@ -237,11 +237,12 @@ div#chartdiv {
 }
 
 .cm-scroll.cm-scroll-white::-webkit-scrollbar {
-    width: 8px; 
+    width: 12px; 
+    background-color: #fff;
 }
 
 .cm-scroll.cm-scroll-white::-webkit-scrollbar-thumb {
-    background-color: #fff;
+    background-color: #ccc;
 }
 
 .cm-result-body > ul > li .cm-cbc-case,
