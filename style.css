@@ -3,7 +3,7 @@ body {
     font-size: 16px;
     line-height: 1.2;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Cairo', sans-serif;
     background-color: #010f1a;
 }
 
@@ -18,19 +18,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .cm-top-container {
     position: relative;
-    min-height: 100vh;
+    min-height: 500px;
 }
 
-.cm-top-container > h1 {
-    font-size: 45px;
+.cm-top-container > h3 {
     text-align: center;
-    text-shadow: 6px 2px 4px #999;
     letter-spacing: 1px;
     margin: 0;
-    padding: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #525252;
     margin-bottom: 15px;
-    padding-left: 320px;
-    padding-right: 220px;
+    padding: 10px 15px;
+    width: calc(100% - 502px);
+    margin-left: 301px;
 }
 
 .cm-result-container {
@@ -60,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .cm-result-body {
     margin-top: 72px;
-    max-height: calc(100vh - 72px);
+    max-height: calc(100% - 72px);
     overflow: auto;
 }
 
@@ -158,13 +159,14 @@ div#chartdiv {
 }
 
 .cm-summary-container > h3 {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .cm-result-body > ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    background-color: #303841;
 }
 
 .cm-result-body > ul > li {
@@ -179,7 +181,7 @@ div#chartdiv {
 
 .cm-summary-world {
     border-bottom: 5px solid #010f1a;
-    padding: 10px;
+    padding: 5px 10px;
     text-align: center;
 }
 
@@ -194,7 +196,7 @@ div#chartdiv {
 
 .cm-summary-world p {
     margin: 0;
-    padding: 5px 0 0;
+    padding: 0;
     font-size: 35px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -285,7 +287,7 @@ p.cm-legend {
 }
 
 .cm-bottom-container {
-    padding-top: 30px;
+    padding-top: 15px;
 }
 
 .cm-bottom-container #covid-table tr th {
@@ -344,7 +346,8 @@ div#covid-table_filter input {
 }
 
 .cm-bottom-content {
-    padding: 0 15px;
+    padding: 15px;
+    background-color: #303841;
     text-align: center;
 }
 
@@ -355,6 +358,8 @@ div#covid-table_filter input {
 
 .cm-bottom-content h2 {
     font-size: 30px;
+    margin: 0;
+    padding: 15px 0;
     letter-spacing: 1px;
 }
 
@@ -362,6 +367,10 @@ div#covid-table_filter input {
     font-size: 18px;
     margin: 0;
     padding-bottom: 15px;
+}
+
+.cm-bottom-content p :last-of-type {
+    padding-bottom: 0;
 }
 
 .cm-bottom-content p strong {
