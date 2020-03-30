@@ -1,0 +1,103 @@
+[{
+    "title": "USA",
+    "latitude": 37.090240,
+    "longitude": -95.712891,
+    "color": "#f32013"
+  }, 
+  {
+    "title": "Italy",
+    "latitude": 41.871941,
+    "longitude": 12.567380,
+    "color": "#f32013"
+  },
+  {
+      "title": "Spain",
+      "latitude": 40.463669,
+      "longitude": -3.749220,
+      "color": "#f32013"
+  },
+  {
+    "title": "Germany",
+    "latitude": 51.165691,
+    "longitude": 10.451526,
+    "color": "#f32013"
+  },
+  {
+    "title": "Iran",
+    "latitude": 51.165691,
+    "longitude": 10.451526,
+    "color": "#f32013"
+  },
+  {
+    "title": "France",
+    "latitude": 46.227638,
+    "longitude": 2.213749,
+    "color": "#f32013"
+  },
+  {
+    "title": "UK",
+    "latitude": 55.378052,
+    "longitude": -3.435973,
+    "color": "#f32013"
+  },
+  {
+    "title": "Switzerland",
+    "latitude": 46.818188,
+    "longitude": 8.227512,
+    "color": "#f32013"
+  },
+  {
+    "title": "Belgium",
+    "latitude": 50.503887,
+    "longitude": 4.469936,
+    "color": "#f32013"
+  },
+  {
+    "title": "Netherlands",
+    "latitude": 52.132633,
+    "longitude": 5.291266,
+    "color": "#f32013"
+  },
+  {
+    "title": "S. Korea",
+    "latitude": 35.907757,
+    "longitude": 127.766922,
+    "color": "#f32013"
+  },
+  {
+    "title": "Austria",
+    "latitude": 47.516232,
+    "longitude": 14.550072,
+    "color": "#f32013"
+  },
+  {
+    "title": "Turkey",
+    "latitude": 38.963745,
+    "longitude": 35.243320,
+    "color": "#f32013"
+  },
+  {
+    "title": "Portugal",
+    "latitude": 39.399872,
+    "longitude": -8.224454,
+    "color": "#f32013"
+  },
+  {
+    "title": "Canada",
+    "latitude": 56.130367,
+    "longitude": -106.346771,
+    "color": "#f32013"
+  }, 
+  {
+    "title": "India",
+    "latitude": 20.593683,
+    "longitude": 78.962883,
+    "color": "#f32013"
+  }, 
+  {
+    "title": "China",
+    "latitude": 35.861660,
+    "longitude": 104.195396,
+    "color": "#f32013"
+  }  
+]

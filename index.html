@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>COVID-19 Tracker</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.dataTables.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="cm-scroll cm-scroll-white">
+    <div id="root">
+        <div class="cm-top-container">
+            <h1>COVID-19 Tracker</h1>
+            <div class="cm-summary-container cm-scroll">
+                <h3>World Summary</h3>
+                <div class="cm-summary-world" id="summary-world-total">
+                <h4>Total Cases</h4>
+                <p></p>
+                </div>
+                <div class="cm-summary-world" id="summary-world-recovered">
+                <h4>Total Recovered</h4>
+                <p></p>
+                </div>
+                <div class="cm-summary-world" id="summary-world-deaths">
+                    <h4>Total Deaths</h4>
+                    <p></p>
+                </div>
+                <div class="cm-summary-world" id="summary-world-new-case">
+                    <h4>New Cases</h4>
+                    <p></p>
+                </div>
+                <div class="cm-summary-world" id="summary-world-new-deaths">
+                    <h4>New Deaths</h4>
+                    <p></p>
+                </div>
+                <div class="cm-update-time" id="summary-world-time">
+                    <p>Last Updated: <br><span></span></p>
+                </div>
+            </div>
+            <div id="chartdiv"></div>
+            <div class="cm-result-container">
+                <div class="cm-result-header">
+                    <h3>Country-wise Summary</h3>
+                    <p class="cm-legend">
+                        <span class="cm-legend-case"><i>&#8226;</i> Total Case</span>
+                        <span class="cm-legend-recovered"><i>&#8226;</i> Recovered</span>
+                        <span class="cm-legend-death"><i>&#8226;</i> Deaths</span>
+                    </p>
+                </div>
+                <div class="cm-result-body cm-scroll">
+                    <ul id="summary-country"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="cm-bottom-container">
+            <div class="cm-bottom-content">
+                <h2>Track Coronavirus(COVID-19) Outbreak by Country</h2>
+                <p>New cases, deaths and recoveries are updated as they come. Please refer to <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" target="_blank">WHO official Website</a> for any information related to COVID-19. Please do not believe on any other news/message that claims to treat COVID-19</p>
+                <p><strong>The best way to protect yourself against COVID-19 is by frequently cleaning your hands.</strong></p>
+                <p><strong>STAY HOME AND STAY SAFE.</strong></p>
+            </div>
+            <table id="covid-table" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Country Name</th>
+                        <th>Cases</th>
+                        <th>New Cases</th>
+                        <th>Deaths</th>
+                        <th>New Deaths</th>
+                        <th>Active Cases</th>
+                        <th>Total Recovered</th>
+                        <th>Critical Cases</th>
+                        <th>Total Cases/1M <br>Population</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="cm-footer">
+        <p class="cm-made">Made with <span title="love">❤</span> by Piyush</p>
+    </div>
+    <!-- Resources -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
