@@ -114,7 +114,7 @@ let apiHit = (url) => {
     return response.json();
   }).then(function(json) {
     let result = json, leng = result.length;
-    console.log(result);
+    //console.log(result);
     //console.log(result[leng - 1]);
   }).catch(function(err) {
     console.log('Fetch problem: ' + err.message);
@@ -147,7 +147,7 @@ let summaryHit = (sumUrl) => {
         cases_by_country_global = json["countries_stat"];
         let cases_by_country = json["countries_stat"], listElement = document.getElementById('summary-country'), numberOfListItems = cases_by_country.length, listItem,
         i, rowElement = document.querySelector('#covid-table tbody'), dataItem;
-        console.log(cases_by_country);
+        //console.log(cases_by_country);
         for (i = 0; i < numberOfListItems; ++i) {
             // create an item for each one
             let cbc_case = cases_by_country[i].cases,
@@ -212,7 +212,7 @@ fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php", {
 .then(response => {
 	return response.json();
 }).then(function(json) {
-    console.log(json);
+    //console.log(json);
     let tot_cases = document.querySelector('#summary-world-total p').innerHTML = json.total_cases, 
     tot_death = document.querySelector('#summary-world-deaths p').innerHTML = json.total_deaths, 
     tot_recovered = document.querySelector('#summary-world-recovered p').innerHTML = json.total_recovered, 
