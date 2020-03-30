@@ -385,3 +385,27 @@ div#covid-table_filter input {
 div#covid-table_info {
     display: none;
 }
+
+.cm-footer {
+    padding: 20px 15px;
+}
+
+.cm-footer p {
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+}
+
+.cm-footer p + p {
+    margin-top: 5px;
+}
+
+.cm-footer p a {
+    color: #008dc9;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.cm-footer span {
+    color: #f00;
+}
