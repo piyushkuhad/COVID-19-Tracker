@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>COVID-19 Tracker</title>
     <link href="https://fonts.googleapis.com/css?family=Cairo:400,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -22,20 +23,45 @@
   </head>
   <body class="cm-scroll cm-scroll-white">
     <div id="root">
+        <div class="cm-covid-bookmark-container cm-bookmark-active">
+            <h2>Bookmarked Countries</h2>
+            <table id="covid-bookmark-table" class="display cm-datatable responsive" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Save</th>
+                        <th>Country Name</th>
+                        <th>Cases</th>
+                        <th>New Cases</th>
+                        <th>Deaths</th>
+                        <th>New Deaths</th>
+                        <th>Active Cases</th>
+                        <th>Total Recovered</th>
+                        <th>Critical Cases</th>
+                        <th>Total Cases/1M <br>Population</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                </tbody>
+            </table>
+        </div>
         <div class="cm-top-container">
-            <h3>Countries affected with COVID-19</h3>
+            <div class="cm-top-header">
+                <h3>Countries affected with COVID-19</h3>
+                <p class="marquee" id="summary-country"></p>
+            </div>
             <div class="cm-summary-container cm-scroll">
                 <h3>World Summary</h3>
                 <div class="cm-summary-world" id="summary-world-total">
-                <h4>Total Cases</h4>
+                <h4>Cases</h4>
                 <p></p>
                 </div>
                 <div class="cm-summary-world" id="summary-world-recovered">
-                <h4>Total Recovered</h4>
+                <h4>Recovered</h4>
                 <p></p>
                 </div>
                 <div class="cm-summary-world" id="summary-world-deaths">
-                    <h4>Total Deaths</h4>
+                    <h4>Deaths</h4>
                     <p></p>
                 </div>
                 <div class="cm-summary-world" id="summary-world-new-case">
@@ -51,7 +77,7 @@
                 </div>
             </div>
             <div id="chartdiv"></div>
-            <div class="cm-result-container">
+            <!-- <div class="cm-result-container">
                 <div class="cm-result-header">
                     <h3>Country-wise Summary</h3>
                     <p class="cm-legend">
@@ -63,7 +89,7 @@
                 <div class="cm-result-body cm-scroll">
                     <ul id="summary-country"></ul>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="cm-bottom-container">
             <div class="cm-bottom-content">
@@ -72,9 +98,10 @@
                 <p><strong>The best way to protect yourself against COVID-19 is by frequently cleaning your hands.</strong></p>
                 <p><strong>STAY HOME AND STAY SAFE.</strong></p>
             </div>
-            <table id="covid-table" class="display" style="width:100%">
+            <table id="covid-table" class="display responsive wrap" style="width:100%">
                 <thead>
                     <tr>
+                        <th>Save</th>
                         <th>Country Name</th>
                         <th>Cases</th>
                         <th>New Cases</th>
@@ -97,8 +124,60 @@
         <p>#stayhomestaysafe #CoronaGo</p>
 
     </div>
+    <div class="cm-country-detail-pop">
+        <div class="cm-country-detail-inner cm-scroll">
+            <h2></h2>
+            <div class="cm-country-current-data">
+                <div class="cm-data-box" id="pop-tot-case">
+                    <h4>Total Cases</h4>
+                    <p></p>
+                </div>
+                <div class="cm-data-box" id="pop-tot-deaths">
+                    <h4>Total Deaths</h4>
+                    <p></p>
+                </div>
+                <div class="cm-data-box" id="pop-tot-recoveries">
+                    <h4>Total Recoveries</h4>
+                    <p></p>
+                </div>
+                <div class="cm-data-box" id="pop-new-cases">
+                    <h4>New Cases</h4>
+                    <p></p>
+                </div>
+                <div class="cm-data-box" id="pop-new-deaths">
+                    <h4>New Deaths</h4>
+                    <p></p>
+                </div>
+                <div class="cm-data-box" id="pop-critical-cases">
+                    <h4>Critical Cases</h4>
+                    <p></p>
+                </div>
+            </div>
+            <div class="cm-graph-container">
+                <div class="cm-graph-item">
+                    <h3>Daily New Cases</h3>
+                    <div id="pop-daily-new-case-wrapper"></div>
+                </div>
+                <div class="cm-graph-item">
+                    <h3>Daily Deaths</h3>
+                    <div id="pop-daily-new-death-wrapper"></div>
+                </div>
+                <div class="cm-graph-item">
+                    <h3>Total Cases</h3>
+                    <div id="pop-tot-cases-wrapper"></div>
+                </div>
+                <div class="cm-graph-item">
+                    <h3>Active Cases vs Total Recovered</h3>
+                    <div id="pop-new-rec-cases-wrapper"></div>
+                </div>
+            </div>
+        </div>
+        <div class="cm-country-detail-pop-close"></div>
+    </div>
     <!-- Resources -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.marquee/1.3.1/jquery.marquee.min.js"></script>
     <script src="/js/core.js"></script>
     <script src="/js/maps.js"></script>
     <script src="/js/worldLow.js"></script>

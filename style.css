@@ -21,17 +21,46 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 500px;
 }
 
-.cm-top-container > h3 {
+.cm-top-header > h3 {
     text-align: center;
     letter-spacing: 1px;
     margin: 0;
     font-size: 16px;
     font-weight: 500;
-    background-color: #525252;
-    margin-bottom: 15px;
     padding: 10px 15px;
-    width: calc(100% - 502px);
-    margin-left: 301px;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #525252;
+}
+
+.cm-top-header {
+    width: calc(100% - 261px);
+    margin-bottom: 15px;
+    position: relative;
+    padding: 10px 15px;
+    background-color: #525252;
+    min-height: 37px;
+}
+
+.marquee {
+    overflow: hidden;
+    margin: 0;
+}
+
+.marquee span {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.marquee span + span {
+    border-left: 1px solid #fff;
+}
+
+.marquee span i {
+    font-style: normal;
+    color: #e7e7e7;
 }
 
 .cm-result-container {
@@ -133,13 +162,13 @@ div#chartdiv {
     width: 100%;
     height: 450px;
     transition: all 0.3s;
-    padding-left: 320px;
-    padding-right: 220px;
+    padding-left: 15px;
+    padding-right: 261px;
 }
 
 .cm-summary-container {
     position: absolute;
-    width: 200px;
+    width: 260px;
     height: 100%;
     background-color: #303841;
     top: 0;
@@ -290,59 +319,135 @@ p.cm-legend {
     padding-top: 15px;
 }
 
-.cm-bottom-container #covid-table tr th {
+.cm-bottom-container #covid-table tr th,
+#root .cm-covid-bookmark-container .cm-datatable tr th {
     border-bottom: 1px solid #fff
 }
 
 .cm-bottom-container th.sorting,
-.cm-bottom-container #covid-table tr.even td {
+.cm-bottom-container #covid-table tr.even td,
+#root .cm-covid-bookmark-container .cm-datatable th.sorting,
+#root .cm-covid-bookmark-container .cm-datatable tr.even td {
     background-color: #303841;
 }
 
-.cm-bottom-container #covid-table tr td {
+.cm-bottom-container #covid-table tr td,
+#root .cm-covid-bookmark-container .cm-datatable tr td {
     text-align: center
 }
 
-#covid-table tr.odd td {
+#covid-table tr.odd td,
+#root .cm-covid-bookmark-container .cm-datatable tr.odd td {
     background-color: #010f1a;
 }
 
-.cm-bottom-container #covid-table {
+.cm-bottom-container #covid-table,
+#root .cm-covid-bookmark-container .cm-datatable {
     border: 1px solid #fff;
 }
 
 .cm-bottom-container #covid-table tr th, 
-.cm-bottom-container #covid-table tr td {
+.cm-bottom-container #covid-table tr td,
+#root .cm-covid-bookmark-container .cm-datatable tr td,
+#root .cm-covid-bookmark-container .cm-datatable tr th {
     border-right: 1px solid #fff;
 }
 
-.cm-bottom-container #covid-table tr td.table-new-case {
+.cm-bottom-container #covid-table tr td.table-new-case,
+#root .cm-covid-bookmark-container .cm-datatable tr td.table-new-case {
     background-color: #ff6600;
 }
 
-.cm-bottom-container #covid-table tr td.table-new-death {
+.cm-bottom-container #covid-table tr td.table-new-death,
+#root .cm-covid-bookmark-container .cm-datatable tr td.table-new-death {
     background-color: #e50316;
 }
 
-div#covid-table_filter {
+.cm-bookmark {
+    overflow: hidden;
+}
+
+.cm-bookmark i {
+    color: #e2e2e2;
+    font-size: 20px;
+    font-style: normal;
+    cursor: pointer;
+}
+
+.cm-bookmarked .cm-bookmark i {
+    color: #eed555;
+    display: block;
+    animation: zoom 300ms linear 1;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cm-covid-bookmark-container.cm-bookmark-active {
+    display: none;
+}
+
+#covid-table .cm-country-name,
+#root .cm-covid-bookmark-container .cm-datatable .cm-country-name {
+    text-decoration: underline;
+    font-weight: 700;
+    color: #4dc9f6;
+    cursor: pointer;
+}
+
+div#covid-table_filter,
+div#covid-bookmark-table_filter {
     padding-bottom: 10px;
     float: left;
 }
 
-div#covid-table_filter label {
+div#covid-table_filter label,
+div#covid-bookmark-table_filter label {
     color: #fff;
     text-transform: uppercase;
     padding: 15px 15px 5px;
     display: block;
 }
 
-div#covid-table_filter input {
+div#covid-table_filter input,
+div#covid-bookmark-table_filter input {
     color: #000;
     padding: 10px;
     border-radius: 5px;
     border: none;
     text-transform: none;
     font-size: 16px;
+}
+
+.cm-covid-bookmark-container {
+    position: relative;
+}
+
+.cm-covid-bookmark-container h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 25px;
+    padding: 20px 15px;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+#root .cm-covid-bookmark-container .cm-datatable {
+    margin-bottom: 15px;
+}
+
+div#covid-bookmark-table_filter {
+    float: right;
 }
 
 .cm-bottom-content {
@@ -392,7 +497,7 @@ div#covid-table_filter input {
    border-right: none; 
 }
 
-div#covid-table_info {
+#root .dataTables_info {
     display: none;
 }
 
@@ -418,4 +523,597 @@ div#covid-table_info {
 
 .cm-footer span {
     color: #f00;
+}
+
+.cm-country-detail-pop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+}
+
+.cm-pop-active .cm-country-detail-pop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.cm-country-detail-inner {
+    width: 100%;
+    padding: inherit;
+    background-color: #525252;
+    margin: 15px;
+    max-height: calc(100vh - 30px);
+    overflow: auto;
+}
+
+.cm-country-detail-pop-close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 5px;
+    top: 10px;
+    z-index: 9999;
+    background-color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cm-country-detail-pop-close:after, 
+.cm-country-detail-pop-close:before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 14px;
+}
+
+.cm-country-detail-pop-close:after {
+    transform: rotate(-45deg);
+}
+
+.cm-graph-item {
+    width: 50%;
+    padding: 25px 0px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.cm-graph-item.cm-graph-item-full {
+    width: 100%;
+}
+
+body.cm-pop-active {
+    overflow: hidden;
+}
+
+.cm-graph-item h3 {
+    font-size: 25px;
+    margin: 0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cm-graph-container {
+    border-top: 2px solid #fff;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cm-country-detail-inner h2 {
+    font-size: 40px;
+    margin: 0;
+    padding: 10px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: underline;
+}
+
+.cm-country-current-data {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 15px;
+    justify-content: center;
+}
+
+.cm-country-current-data .cm-data-box {
+    border: 1px solid #fff;
+    margin-bottom: 20px;
+    margin: 0 5px 20px;
+    text-align: center;
+    flex: 1;
+}
+
+.cm-country-current-data .cm-data-box h4 {
+    font-size: 18px;
+    margin: 0;
+    margin: 5px 5px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #fff;
+}
+
+.cm-country-current-data .cm-data-box p {
+    font-size: 22px;
+    margin: 0;
+    padding: 5px;
+    color: #fff;
+}
+
+/*================Responsive Start========================*/
+
+@media(max-width: 1260px) {
+
+    .cm-graph-item {
+        width: 80%;
+        padding: 15px 0px;
+    }
+
+}
+
+@media(max-width: 1200px) {
+
+    .cm-summary-container {
+        width: 200px;
+    }
+    
+    .cm-top-header {
+        width: calc(100% - 201px);
+    }
+    
+    div#chartdiv {
+        padding-right: 201px;
+    }
+    
+    .cm-summary-world p {
+        font-size: 30px;
+    }
+
+}
+
+@media(max-width: 991px) {
+
+    #root .cm-covid-bookmark-container .cm-datatable tr td:nth-child(3):before,
+    .cm-bottom-container #covid-table tr td:nth-child(3):before {
+        content: 'Cases';
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td:nth-child(4):before,
+    .cm-bottom-container #covid-table tr td:nth-child(4):before {
+        content: 'New Cases';
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td:nth-child(5):before,
+    .cm-bottom-container #covid-table tr td:nth-child(5):before {
+        content: 'Deaths';
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td:nth-child(6):before,
+    .cm-bottom-container #covid-table tr td:nth-child(6):before {
+        content: 'New Deaths';
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td:nth-child(7):before,
+    .cm-bottom-container #covid-table tr td:nth-child(7):before {
+        content: 'Active Cases';
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td:nth-child(8):before,
+    .cm-bottom-container #covid-table tr td:nth-child(8):before {
+        content: 'Total Recovered';
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td:nth-child(9):before,
+    .cm-bottom-container #covid-table tr td:nth-child(9):before {
+        content: 'Critical Cases';
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td:nth-child(10):before,
+    .cm-bottom-container #covid-table tr td:nth-child(10):before {
+        content: 'Total Cases/1M Population';
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td,
+    .cm-bottom-container #covid-table tr td {
+        display: block;
+        width: 100%;
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr,
+    .cm-bottom-container #covid-table tr {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable thead,
+    .cm-bottom-container #covid-table thead {
+        display: none;
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable *,
+    .cm-bottom-container #covid-table * {
+        box-sizing: border-box;
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td.cm-bookmark,
+    .cm-bottom-container #covid-table tr td.cm-bookmark {
+        width: 45px;
+        position: absolute;
+        top: 0;
+        padding-top: 1px;
+        padding-bottom: 2px;
+        border: none;
+        border-bottom: 1px solid #fff;
+        margin: 0;
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td.cm-country-name,
+    .cm-bottom-container #covid-table tr td.cm-country-name {
+        width: calc(100% - 45px);
+        border-top: none;
+        border-bottom: 1px solid #fff;
+        margin: 0;
+        margin-bottom: 10px;
+        margin-left: 45px;
+        font-size: 20px;
+        border-right: none;
+        padding: 5px;
+    }
+    
+    .cm-bookmark i {
+        font-size: 26px;
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr,
+    .cm-bottom-container #covid-table tr {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: #010f1a;
+        border: 1px solid #fff;
+        margin-bottom: 15px;
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td,
+    .cm-bottom-container #covid-table tr td {
+        width: calc(33.33% - 15px);
+        border: 1px solid #fff;
+        margin: 0 7.5px 10px;
+        font-weight: 700;
+        font-size: 18px;
+        background-color: #010f1a;
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td:before,
+    .cm-bottom-container #covid-table tr td:before {
+        display: block;
+        border-bottom: 1px solid #fff;
+        margin-bottom: 5px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: normal;
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td.table-new-case,
+    .cm-bottom-container #covid-table tr td.table-new-case {
+        color: #ff6600;
+        background-color: #010f1a;
+        font-weight: 700;
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td.table-new-death,
+    .cm-bottom-container #covid-table tr td.table-new-death {
+        color: #e50316;
+        background-color: #010f1a;
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td.cm-country-name,
+    .cm-bottom-container #covid-table tr td.cm-country-name {
+        background-color: #303841 !important;
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr.even td,
+    .cm-bottom-container #covid-table tr.even td {
+        background-color: #010f1a;
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable,
+    .cm-bottom-container #covid-table {
+        border: none;
+        padding: 0 10px;
+    }
+
+    table.fixedHeader-floating.no-footer {
+        display: none !important;
+    }
+
+    #root .cm-covid-bookmark-container .cm-datatable tr td:nth-child(7),
+    #root .cm-covid-bookmark-container .cm-datatable tr td:last-child, 
+    .cm-bottom-container #covid-table tr td:nth-child(7),
+    .cm-bottom-container #covid-table tr td:last-child {
+        display: none;
+    }
+
+    /* World Stats Start */
+
+    .cm-summary-container.cm-scroll {
+        position: fixed;
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        justify-content: space-between;
+    }
+    
+    .cm-summary-container > h3 {
+        padding: 5px 10px;
+        width: 100%;
+    }
+    
+    .cm-summary-world {
+        width: 20%;
+        text-align: center;
+    }
+    
+    .cm-summary-world h4 {
+        text-align: center;
+        font-size: 12px;
+    }
+    
+    .cm-summary-world p {
+        font-size: 24px;
+    }
+    
+    div#summary-world-time {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+    div#summary-world-time br {
+        display: none;
+    }
+    
+    div#summary-world-time p {
+        padding: 5px 10px;
+    }
+    
+    .cm-top-header {
+        width: 100%;
+    }
+    
+    div#chartdiv {
+        padding-right: 15px;
+    }
+
+    div#root {
+        padding-top: 88px;
+    }
+
+    /* World Stats End */
+
+    /* Popup Start */
+
+    .cm-country-current-data .cm-data-box h4 {
+        font-weight: 600;
+        font-size: 16px;
+    }
+    
+    .cm-country-current-data .cm-data-box {
+        width: calc(33.33% - 10px);
+        flex: auto;
+        margin-bottom: 10px;
+    }
+    
+    .cm-country-current-data .cm-data-box p {
+        font-size: 20px;
+    }
+
+    .cm-country-detail-inner h2 {
+        font-size: 35px;
+    }
+
+    .cm-graph-item {
+        width: 100%;
+    }
+
+    /* Popup End */
+
+}
+
+@media(max-width: 767px) {
+
+    div#root {
+        padding-top: 79px;
+    }
+    
+    .cm-summary-world p {
+        font-size: 20px;
+    }
+    
+    .cm-summary-world {
+        border: none;
+    }
+    
+    .cm-covid-bookmark-container h2 {
+        font-size: 20px;
+        font-weight: 600;
+        padding: 18px 10px;
+    }
+    
+    div#covid-table_filter input, 
+    div#covid-bookmark-table_filter input {
+        padding: 5px;
+    }
+    
+    .cm-bottom-content h2 {
+        font-size: 25px;
+    }
+    
+    .cm-bottom-content p {
+        font-size: 16px;
+    }
+    
+    .cm-bottom-content p strong {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    div#root {
+        padding-top: 79px;
+    }
+    
+    .cm-graph-item {
+        width: 100%;
+    }
+
+    .cm-summary-world {
+        width: auto;
+    }
+
+    .cm-country-detail-inner h2 {
+        font-size: 30px;
+        padding-bottom: 0;
+    }
+    
+    .cm-country-current-data {
+        padding: 20px 5px 10px;
+    }
+    
+    .cm-graph-container {
+        padding: 10px;
+    }
+    
+    .cm-graph-item {
+        padding: 10px 0;
+    }
+    
+    .cm-graph-item h3 {
+        font-size: 20px;
+        margin-bottom: 0;
+        font-weight: 600;
+    }
+
+    div#covid-bookmark-table_filter {
+        margin: 0 !important;
+    }
+
+    div#chartdiv {
+        height: 300px;
+    }
+
+    .cm-top-container {
+        min-height: auto;
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .cm-summary-container.cm-scroll {
+        justify-content: center;
+    }
+    
+    .cm-summary-world {
+        width: 33.33%;
+    }
+    
+    .cm-summary-world p {
+        font-size: 16px;
+    }
+    
+    .cm-summary-world h4 {
+        text-transform: none;
+    }
+
+    .cm-covid-bookmark-container h2 {
+        position: static;
+        padding: 20px 10px 0px;
+        text-align: center;
+    }
+    
+    div#covid-bookmark-table_filter {
+        float: left;
+    }
+
+}
+
+@media(max-width: 479px) {
+
+    #root .cm-covid-bookmark-container .cm-datatable tr td, 
+    .cm-bottom-container #covid-table tr td {
+        width: calc(50% - 15px);
+    }
+
+    #root .cm-covid-bookmark-container .cm-datatable tr td, 
+    .cm-bottom-container #covid-table tr td {
+        font-size: 16px;
+        font-weight: 600 !important;
+    }
+
+    .cm-country-detail-inner h2 {
+        font-size: 25px;
+    }
+    
+    .cm-country-current-data .cm-data-box h4 {
+        font-size: 14px;
+        font-weight: normal;
+    }
+    
+    .cm-country-current-data .cm-data-box p {
+        font-size: 16px;
+    }
+    
+    .cm-graph-item h3 {
+        font-size: 18px;
+    }
+
+    .cm-country-current-data .cm-data-box {
+        width: calc(50% - 10px);
+    }
+
+    #root .cm-covid-bookmark-container .cm-datatable tr td.cm-country-name, 
+    .cm-bottom-container #covid-table tr td.cm-country-name {
+        font-size: 18px;
+    }
+
+}
+
+@media(max-width: 400px) {
+
+    div#summary-world-time {
+        position: static;
+    }
+    
+    .cm-summary-container > h3 {
+        text-align: center;
+    }
+
+    .cm-country-detail-inner {
+        margin: 15px 5px;
+    }
+    
+    .cm-country-detail-pop-close {
+        right: 0;
+    }
+
 }
