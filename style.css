@@ -855,8 +855,12 @@ body.cm-pop-active {
 
     /* World Stats Start */
 
+    .cm-top-container {
+        position: static;
+    }
+
     .cm-summary-container.cm-scroll {
-        position: fixed;
+        position: absolute;
         height: auto;
         width: 100%;
         display: flex;
