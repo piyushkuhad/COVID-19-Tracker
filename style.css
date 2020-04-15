@@ -426,6 +426,7 @@ div#covid-bookmark-table_filter input {
     border: none;
     text-transform: none;
     font-size: 16px;
+    min-height: 38px;
 }
 
 .cm-covid-bookmark-container {
@@ -967,6 +968,7 @@ body.cm-pop-active {
     div#covid-table_filter input, 
     div#covid-bookmark-table_filter input {
         padding: 5px;
+        min-height: 28px;
     }
     
     .cm-bottom-content h2 {
