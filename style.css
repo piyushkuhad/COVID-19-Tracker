@@ -938,6 +938,10 @@ body.cm-pop-active {
 
     /* Popup End */
 
+    .cm-footer {
+        padding: 5px 15px 20px;
+    }
+
 }
 
 @media(max-width: 767px) {
@@ -1025,6 +1029,16 @@ body.cm-pop-active {
         min-height: auto;
     }
 
+    .cm-top-header > h3 {
+        font-size: 14px;
+        position: static;
+        padding-top: 0;
+    }
+    
+    .marquee span {
+        font-size: 14px;
+    }
+
 }
 
 @media(max-width: 600px) {
@@ -1096,6 +1110,24 @@ body.cm-pop-active {
         font-size: 18px;
     }
 
+    .cm-bottom-content h2 {
+        font-size: 20px;
+    }
+
+    div#chartdiv {
+        height: 250px;
+    }
+
+    .cm-bookmark i {
+        font-size: 22px;
+    }
+    
+    #root .cm-covid-bookmark-container .cm-datatable tr td.cm-bookmark, 
+    .cm-bottom-container #covid-table tr td.cm-bookmark {
+        padding-top: 2px;
+        padding-bottom: 3px;
+    }
+
 }
 
 @media(max-width: 400px) {
@@ -1106,6 +1138,10 @@ body.cm-pop-active {
     
     .cm-summary-container > h3 {
         text-align: center;
+    }
+
+    div#chartdiv {
+        height: 200px;
     }
 
     .cm-country-detail-inner {
