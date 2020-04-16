@@ -16,6 +16,25 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
 }
 
+/* Fix Data Table Start */
+
+table.fixedHeader-floating {
+	position: fixed !important;
+	background-color: white
+}
+
+table.fixedHeader-floating.no-footer {
+	border-bottom-width: 0
+}
+
+table.fixedHeader-locked {
+	position: absolute !important;
+	background-color: white
+}
+
+/* Fix Data Table End */
+
+
 .cm-top-container {
     position: relative;
     min-height: 500px;
