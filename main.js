@@ -133,29 +133,6 @@ document.getElementById("result-close").addEventListener('click', function(){
 }); // end am4core.ready()
 //Map End
 
-//Fetching country by history
-// let histData = (event) => {
-//   let countryName = event.target.innerText;
-//   fetch(`https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_particular_country.php?country=${countryName}`, {
-//     "method": "GET",
-//     "headers": {
-//       "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
-//       "x-rapidapi-key": "f84844d573msh6b48f5d19dea0c8p139f12jsn1c76a48f8e0d"
-//     }
-//   })
-//   .then(response => {
-//     return response.json();
-//   }).then(function(json){
-//     countryHistoryData = json;
-//     console.log(countryHistoryData);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   });
-  
-//   document.body.classList.add('cm-pop-active');
-// }
-
 //Covid Bookmark Data Table
 var bookmarkTable = $('#covid-bookmark-table').DataTable({
   "paging": false,
@@ -284,7 +261,8 @@ fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/worldstat.php", {
     tot_new_cases = document.querySelector('#summary-world-new-case p').innerHTML = '+' + json.new_cases, 
     tot_new_deaths = document.querySelector('#summary-world-new-deaths p').innerHTML = '+' + json.new_deaths, 
     tot_statistic_taken_at = document.querySelector('#summary-world-time span').innerHTML = new Date(json.statistic_taken_at).toLocaleString();
-    document.querySelector('title').innerHTML = `COVID-19 Updates(Live): Total Cases: ${tot_cases}, Total Deaths: ${tot_death}, Total Recovered: ${tot_recovered} - Last Updated: ${tot_statistic_taken_at}`;
+
+    //document.querySelector('title').innerHTML = `COVID-19 Updates(Live): Total Cases: ${tot_cases}, Total Deaths: ${tot_death}, Total Recovered: ${tot_recovered} - Last Updated: ${tot_statistic_taken_at}`;
 
     //Top Gap in Mobile
     setHeight();
