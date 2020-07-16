@@ -677,6 +677,10 @@ body.cm-pop-active {
     color: #fff;
 }
 
+.cm-pop-active .cm-country-detail-pop .cm-graph-container > .cm-graph-item:last-child {
+    display: none !IMPORTANT;
+}
+
 /*================Responsive Start========================*/
 
 @media(max-width: 1260px) {
