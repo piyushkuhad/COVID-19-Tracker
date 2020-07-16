@@ -379,11 +379,11 @@ fetch(`https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_particula
       type: 'line',
       // The data for our dataset
       data: {
-          labels: popDataDateClean,
+          labels: popDataDateClean.reverse(),
           datasets: [{
               label: 'Total Cases',
               borderColor: '#f67019',
-              data: dupArrVal
+              data: dupArrVal.reverse()
           }]
       },
 
@@ -422,13 +422,13 @@ fetch(`https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_particula
 
   let popActCaseGdata = {
     label: "Active Cases",
-    data: popActCaseClean,
+    data: popActCaseClean.reverse(),
     borderColor: '#33ccff'
   };
 
   let popRecGdata = {
     label: "Recovered Cases",
-    data: popRecCaseClean,
+    data: popRecCaseClean.reverse(),
     borderColor: '#76ae19'
   };
 
@@ -437,7 +437,7 @@ fetch(`https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_particula
       type: 'line',
       // The data for our dataset
       data: {
-          labels: popDataDateClean,
+          labels: popDataDateClean.reverse(),
           datasets: [popActCaseGdata, popRecGdata]
       },
 
@@ -479,12 +479,12 @@ fetch(`https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_particula
       type: 'bar',
       // The data for our dataset
       data: {
-          labels: popDataDateClean,
+          labels: popDataDateClean.reverse(),
           datasets: [{
               label: 'Daily New Case',
               borderColor: '#33ccff',
               backgroundColor: "#33ccff",
-              data: popNewCaseClean
+              data: popNewCaseClean.reverse()
           }]
       },
 
@@ -526,12 +526,12 @@ fetch(`https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_particula
       type: 'bar',
       // The data for our dataset
       data: {
-          labels: popDataDateClean,
+          labels: popDataDateClean.reverse(),
           datasets: [{
               label: 'Daily Deaths',
               borderColor: '#f00',
               backgroundColor: "#f00",
-              data: popNewDeathClean
+              data: popNewDeathClean.reverse()
           }]
       },
 
